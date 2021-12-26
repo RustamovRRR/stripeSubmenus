@@ -39,3 +39,15 @@ sidebar.innerHTML = sublinks
     </article>`;
   })
   .join("");
+
+linkBtns.forEach((btn) => {
+  btn.addEventListener("mouseover", function (e) {
+    const text = e.currentTarget.textContent;
+    const tempBtn = e.currentTarget.getBoundingClientRect();
+    const center = (tempBtn.left + tempBtn.right) / 2;
+    const bottom = tempBtn.bottom - 3;
+    submenu.classList.add("show");
+    submenu.style.left = `${center}px`;
+    submenu.style.top = `${bottom}px`;
+  });
+});
